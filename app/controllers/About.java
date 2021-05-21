@@ -15,10 +15,6 @@ public class About extends Controller
 {
   public static void index() {
     Logger.info("Rendering about"); //Includes logging message in the console
-
-
-
-
     render ("about.html"); // displays the about view
   }
 }

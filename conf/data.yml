@@ -1,26 +1,30 @@
 Reading(r1):
  code: 800
- temp: 0.5
+ temp: 0.9
  windSpeed: 3.5
+ pressure: 1004
 Reading(r2):
  code: 600
  temp: 6.0
  windSpeed: 2
+ pressure: 1004
 Reading(r3):
  code: 700
  temp: 8.0
  windSpeed: 1
+ pressure: 1000
 Reading(r4):
  code: 200
  temp: 0.5
  windSpeed: 3.5
+ pressure: 999
 Station(s1):
- name: Tramore
+ name: Valentia
  readings:
- - r1
- - r2
+  - r1
+  - r2
 Station(s2):
  name: Dunmore
  readings:
- - r3
- - r4
+  - r3
+  - r4

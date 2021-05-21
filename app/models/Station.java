@@ -19,7 +19,7 @@ import play.db.jpa.Model;
 
 /**
  * Constructor for objects of class Station
- * @param name a string which describes the location of a weatherstation
+ * @param location a string which describes the location of a weatherstation
  * @param codes a list array of the weather codes that relate to a particular weatherstation
 
  */
