@@ -1,0 +1,25 @@
+<!--This partial view has a table the details of each reading, such as the code, temp and Wind speed data-->
+<table class="ui fixed table">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Temp</th>
+        <th>Wind Speed</th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:_station.readings, as:'reading'}
+
+    <tr>
+        <td>
+            ${reading.code}
+        </td>
+        <td>
+            ${reading.temp}
+        </td>
+        <td>
+            ${reading.windSpeed}
+        </td>
+        #{/list}
+    </tbody>
+</table>

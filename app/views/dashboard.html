@@ -3,6 +3,13 @@
 
 #{menu id:"dashboard"/}
 
+<!--This is the Dashboard view which displays a list of the weather stations and the related weather information-->
+
+#{list items:stations, as:'station'}
 <section class="ui segment">
-  #{mainpanel/}
+  <h2 class="ui header">
+    ${station.name}
+  </h2>
+  #{listreadings station:station/}
 </section>
+#{/list}
