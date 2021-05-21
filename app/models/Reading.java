@@ -1,7 +1,10 @@
 package models;
 import javax.persistence.Entity;
 
+import net.sf.ehcache.search.parser.MValue;
 import play.db.jpa.Model;
+
+import java.math.BigDecimal;
 /**
  * The Code class which creates the parameters relating to the Weather readings
  *
@@ -26,11 +29,17 @@ public class Reading extends Model {
   public double temp;
   public double windSpeed;
   public int pressure;
+  public double windDirection;
 
-  public Reading(int code, double temp, double windSpeed, int pressure) {
+
+  public Reading(int code, double temp, double windSpeed, int pressure, double windDirection ) {
     this.code = code;
     this.temp = temp;
     this.windSpeed = windSpeed;
     this.pressure = pressure;
+    this.windDirection = windDirection;
   }
+
+
+
 }

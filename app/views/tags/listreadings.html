@@ -1,83 +1,50 @@
 <!--This partial view has a table the details of each reading, such as the code, temp and Wind speed data-->
+
+
 <div class="ui segment">
 
 
-    <div class="ui padded grid">
 
-        <div class="row">
-            <h1 class="ui big dividing header">Dashboard</h1>
-        </div>
-        <div class="center aligned row">
-            <div class="five wide column">
-                <i class="huge map marker alternate icon"></i>
-                <div class="ui large basic label"> Add Station  </div>
-            </div>
-            <div class="five wide column">
+    <table class="ui fixed table">
+        <thead>
+        <tr>
+            <th>Date/Time</th>
+            <th>Code</th>
+            <th>Temp</th>
+            <th>Wind Speed</th>
+            <th>Pressure</th>
+            <th>Wind Direction</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        #{list items:_station.readings, as:'reading'}
+        <tr>
+            <td>
 
-                <i class="huge globe icon"></i>
-                <div class="ui large basic label">Weather</div>
-                <p>String relating to code</p>
-            </div>
+            </td>
+            <td>
+                ${reading.code}
+            </td>
+            <td>
+                ${reading.temp}
+            </td>
+            <td>
+                ${reading.windSpeed}
+            </td>
+            <td>
+                ${reading.pressure}
+            </td>
+            <td>
+                ${reading.windDirection}
+            </td>
+            <td>
+                <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui tiny red button">Delete Reading</a>  <!--MAY NEED TO REMOVE THIS IF NOT REQUIRED-->
+            </td>
 
-            <div class="five wide column">
-                <i class="huge thermometer half icon"></i>
-                <div class="ui large basic label"> Temperature </div>
-                <p>Celsius value</p>
-                <p>Fahrenheit value</p>
-            </div>
-            <div class="five wide column">
-                <i class="huge arrows alternate icon"></i>
-                <div class="ui large basic label">Wind</div>
-                <p>bft value</p>
-                <p>Str relating to wind</p>
-                <p>Str relating to wind</p>
-                <p>Str relating to code</p>
-            </div>
-            <div class="five wide column">
-                <i class="huge angle double down icon"></i>
-                <div class="ui large basic label">Pressure</div>
-                <p>hpa value</p>
-            </div>
-        </div>
-        <div class="ui hidden section divider"></div>
-        <div class="row">
+            #{/list}
 
-        </div>
+        </tbody>
+    </table>
 
-
-
-        <table class="ui fixed table">
-            <thead>
-            <tr>
-                <th>Code</th>
-                <th>Temp</th>
-                <th>Wind Speed</th>
-                <th>Pressure</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            #{list items:_station.readings, as:'reading'}
-
-            <tr>
-                <td>
-                    ${reading.code}
-                </td>
-                <td>
-                    ${reading.temp}
-                </td>
-                <td>
-                    ${reading.windSpeed}
-                </td>
-                <td>
-                    ${reading.pressure}
-                </td>
-                <td>
-                    <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui tiny red button">Delete Reading</a>  <!--MAY NEED TO REMOVE THIS IF NOT REQUIRED-->
-                </td>
-
-                #{/list}
-            </tbody>
-        </table>
-
-    </div>
+</div>

@@ -3,11 +3,67 @@
 
 #{menu id:"dashboard"/}
 
-<section class="ui segment">
-    <h2 class="ui header">
-        ${station.name}
 
-    </h2>
-    #{listreadings station:station /}
-    #{addreading station:station /}
+
+<section class="ui segment">
+    <h4 class="ui header">
+        ${station.name} </h4>
+
+
+    <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column"
+         id="content">
+        <div class="ui padded grid">
+            <div class="row">
+                <h1 class="ui big dividing header">Dashboard</h1>
+            </div>
+            <div class="center aligned row">
+                <div class="three wide column">
+                    <i class="huge red map marker icon"></i>
+                    <img class="ui centered small circular image"
+                         src="/public/images/umbrellas.jpg"/>
+
+                    <div class="ui large basic label">${station.name}</div>
+                    <p> ${station.latitude} </p>
+                    <p> ${station.longitude} </p>
+                </div>
+                <div class="three wide column">
+                    <i class="huge pink cloud sun icon"></i>
+                    <img class="ui centered small circular image"
+                         src="/public/images/umbrellas.jpg"/>
+                    <div class="ui large basic label">Weather</div>
+                    <p>latest Weather: ${station.latestWeatherCodeStr} </p>
+                </div>
+                <div class="three wide column">
+                    <i class="huge blue thermometer icon"></i>
+                    <img class="ui centered small circular image"
+                         src="/public/images/umbrellas.jpg"/>
+                    <div class="ui large basic label">Temperature</div>
+                    <p>latest temperature: ${station.latestTemperature} C</p>
+                    <p>latest temperature: ${station.latestTemperature*9/5+32} F</p>
+                </div>
+                <div class="three wide column">
+                    <i class="huge green wind icon"></i>
+                    <img class="ui centered small circular image"
+                         src="/public/images/umbrellas.jpg"/>
+                    <div class="ui large basic label">Wind Speed</div>
+                    <p> latest WindSpeed ${station.beaufort}</p>
+                    <p>${station.convertToTextDir}</p>
+                    <p>Feels Like</p>
+                    <p>${station.latestWindChill} C</p>
+                </div>
+                <div class="three wide column">
+                    <i class="huge yellow atom icon"></i>
+                    <img class="ui centered small circular image"
+                         src="/public/images/umbrellas.jpg"/>
+                    <div class="ui large basic label">Pressure</div>
+                    <p>latest Pressure: ${station.latestPressure} hpa</p>
+                </div>
+
+            </div>
+
+
+            #{listreadings station:station /}
+            #{addreading station:station /}
+
+
 </section>

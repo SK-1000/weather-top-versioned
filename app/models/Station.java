@@ -28,10 +28,22 @@ import play.db.jpa.Model;
 public class Station extends Model
 {
   public String name;
+  public String latitude;
+  public String longitude;
   @OneToMany(cascade = CascadeType.ALL)
   public List<Reading> readings = new ArrayList<Reading>();
-  public Station(String name)
+
+  public double latestTemperature;
+  public double latestPressure;
+  public String latestWeatherCodeStr;
+  public String beaufort;
+  public String convertToTextDir;
+  public double latestWindChill;
+
+  public Station(String name,String latitude,String longitude)
   {
     this.name = name;
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 }
